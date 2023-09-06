@@ -26,7 +26,7 @@ on:
 env:
   PULL_REQUEST_NUM: $(echo "${{ github.event.issue.pull_request.url }}" | awk -F/ '{print $NF}')
   LATEST_COMMIT: $(curl -H "Authorization:Bearer ${{ secrets.GITHUB_TOKEN }}" "https://api.github.com/repos/${{ github.repository }}/pulls/$(echo '${{ github.event.issue.pull_request.url }}' | awk -F/ '{print $NF}')" > pr_details.json && jq -r '.head.sha' pr_details.json)
-  TEAMCITY_URL: '-H \"Content-Type:text/plain\" -H \"Accept: application/json\" -u OneMoreChance:OneMoreChance http://43.132.222.7:8111'
+  TEAMCITY_URL: '-H \"Content-Type:text/plain\" -H \"Accept: application/json\" -u OneMoreChance:OneMoreChance https://fastap.teamcity.com'
 
 jobs:
   run_teamcity_pipeline:
