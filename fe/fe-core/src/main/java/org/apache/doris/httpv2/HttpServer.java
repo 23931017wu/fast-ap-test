@@ -169,7 +169,7 @@ public class HttpServer extends SpringBootServletInitializer {
         if (DorisFE.DORIS_HOME_DIR != null) {
             System.setProperty("spring.http.multipart.location", DorisFE.DORIS_HOME_DIR);
         }
-        System.setProperty("spring.banner.image.location", "doris-logo.png");
+        System.setProperty("spring.banner.image.location", "bonc-logo.png");
         if (FeConstants.runningUnitTest) {
             // this is currently only used for unit test
             properties.put("logging.config", getClass().getClassLoader().getResource("log4j2.xml").getPath());
